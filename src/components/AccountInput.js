@@ -6,7 +6,7 @@ class AccountInput extends React.Component{
 
     state = {
         name: '',
-        balance: null,
+        balance: '',
         acc_type: ''
     }
 

@@ -1,6 +1,6 @@
 import React from 'react'
 // import {connect} from 'react-redux'
-// import Transactions from '../components/Transactions'
+import Transactions from '../components/Transactions'
 // import { fetchTransactions } from '../actions/fetchTransactions'
 
 // const mapStateToProps = state => {
@@ -18,10 +18,10 @@ class TransactionsContainer extends React.Component {
     render(){
         return(
             <div>
-                Transactions:
+                <h1>Transactions:</h1>
                 {/* <TransactionInput/> */}
                 {/* the following is undefined.. */}
-                {/* <Transactions transactions={this.props.account.transactions}/> */}
+                <Transactions transactions={this.props.account && this.props.account.transactions}/>
             </div>
         )
     }

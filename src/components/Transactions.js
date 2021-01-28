@@ -4,11 +4,10 @@ const Transactions = (props) => {
 
     return(
         <div>
-            Transactions:
-            {props.transactions.map(transactions => 
+            {this.props.transactions.map(transactions => 
                 <li key={transactions.id}>
                     {transactions.t_name} - ${transactions.t_amount} | {transactions.t_type}
-                    {transactions.description}
+                    <p>{transactions.description}</p><br></br>
                 </li>)}
         </div>
     
