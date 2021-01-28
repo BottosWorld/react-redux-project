@@ -11,7 +11,8 @@ const Accounts = (props) => {
                     <div>
                         <TransactionsContainer/>
                     </div><br></br>
-                </li>)}
+                </li>)
+            }
         </div>
     
     )
