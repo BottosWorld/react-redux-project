@@ -7,7 +7,7 @@ import {Provider} from 'react-redux'
 import { createStore, compose, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 // thunk is needed for async requests, allowing us to pull data from api with fetch requests
-// import rootReducer from './reducers'
+// import reducer from './reducers/index'
 import accountReducer from './reducers/accountReducer'
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
