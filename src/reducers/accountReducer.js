@@ -5,6 +5,8 @@ export default function accountReducer(state = {accounts: []}, action) {
             return {accounts: action.payload}
         case "ADD_ACCOUNT":
             return {...state, accounts: [...state.accounts, action.payload]}
+        // case "ADD_TRANSACTION":
+        //     return 
         default:
             return state
     }

@@ -1,19 +1,19 @@
 import React from 'react'
-import {connect} from 'react-redux'
+// import {connect} from 'react-redux'
 // import Transactions from '../components/Transactions'
-import { fetchTransactions } from '../actions/fetchTransactions'
+// import { fetchTransactions } from '../actions/fetchTransactions'
 
-const mapStateToProps = state => {
-    return{
-        transactions: state.transactions,
-    }
-}
+// const mapStateToProps = state => {
+//     return{
+//         transactions: state.transactions,
+//     }
+// }
 
 class TransactionsContainer extends React.Component {
 
-    componentDidMount(){
-        this.props.fetchTransactions()
-    }
+    // componentDidMount(){
+    //     this.props.fetchTransactions()
+    // }
 
     render(){
         return(
@@ -27,4 +27,5 @@ class TransactionsContainer extends React.Component {
     }
 }
 
-export default connect(mapStateToProps, {fetchTransactions})(TransactionsContainer)
+// export default connect(mapStateToProps, {fetchTransactions})(TransactionsContainer)
+export default TransactionsContainer
