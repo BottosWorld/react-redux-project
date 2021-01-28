@@ -4,6 +4,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 // Connect automatically dispatches, thunk allows us to call dispatch async from our fetch actions
 import {fetchAccounts} from './actions/fetchAccounts'
+import AccountsContainer from "./containers/AccountsContainer";
 
 class App extends React.Component{
 
@@ -28,6 +29,9 @@ class App extends React.Component{
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
+          <div>
+            <AccountsContainer/>
+          </div><br></br>
           <a
             className="App-link"
             href="https://reactjs.org"
