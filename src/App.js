@@ -1,14 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
 import React from 'react'
+import {connect} from 'react-redux'
+// Connect automatically dispatches, thunk allows us to call dispatch async from our fetch actions
+import {fetchAccounts} from './actions/fetchAccounts'
 
 class App extends React.Component{
 
-  // componentDidMount(){
-  //   fetch('http://localhost:3000/accounts/1/transactions')
-  //   .then(resp => resp.json())
-  //   .then(data => console.log(data))
-  // }
+  componentDidMount(){
+    this.props.fetchAccounts()
+    // fetch('http://localhost:3000/accounts/1/transactions')
+    // .then(resp => resp.json())
+    // .then(data => console.log(data))
+  }
+
+  // this.props.fetchAccounts
 
   render(){
     return (
@@ -34,6 +40,16 @@ class App extends React.Component{
       </div>
     )
   }
+
+  // 1st connect argument gives us access to what's in the store using mapStateToProps
+  // const mapStateToProps = (state) => {
+  //   return{
+  //     accounts: state.accounts
+  //   }
+  // }
+
+  // 2nd connect argument, such as mapDispatchToProps or an action like {fetchAccounts}
+  // gives us the ability to dispatch new actions to our store
 }
 
-export default App;
+export default connect(null, {fetchAccounts})(App);

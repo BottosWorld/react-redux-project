@@ -3,11 +3,21 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {Provider} from 'react-redux'
+import { createStore, compose, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+// thunk is needed for async requests, allowing us to pull data from api with fetch requests
+// import rootReducer from './reducers'
+import accountReducer from './reducers/accountReducer'
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+
+let store = createStore(accountReducer, composeEnhancers(applyMiddleware(thunk)))
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
 
