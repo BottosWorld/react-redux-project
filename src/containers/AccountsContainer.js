@@ -1,8 +1,10 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import Accounts from '../components/Accounts'
+import Account from '../components/Account'
 import AccountInput from '../components/AccountInput'
 import { fetchAccounts } from '../actions/fetchAccounts'
+import {Route} from 'react-router-dom'
 // import TransactionsContainer from '../containers/TransactionsContainer'
 
 // const mapDispatchToProps = dispatch => {
@@ -27,8 +29,10 @@ class AccountsContainer extends React.Component {
     render(){
         return(
             <div>
-                <Accounts accounts={this.props.accounts}/><br></br>
-                <AccountInput/>
+                <Route exact path='/accounts/new' component={AccountInput}/>
+                <Route exact path='/accounts/' render={() => <Accounts accounts={this.props.accounts}/>}/>
+                <Route path='/accounts/:id' render={(routerProps) => <Account {...routerProps} accounts={this.props.accounts}/>}/>
+                <br></br>
             </div>
         )
     }

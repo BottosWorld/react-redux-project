@@ -2,9 +2,12 @@ import React from 'react'
 import TransactionsContainer from '../containers/TransactionsContainer'
 
 const Account = (props) => {
+
+    let account = props.accounts[props.match.params.id - 1]
+
     return(
         <li>
-            {props.account.name} - {props.account.acc_type} | ${props.account.balance}
+            {account ? account.name : null} - {account ? account.acc_type : null} | ${account ? account.balance : null}
             <div>
                 <TransactionsContainer/>
             </div><br></br>
