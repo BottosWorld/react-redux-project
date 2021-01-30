@@ -19,7 +19,7 @@ class TransactionInput extends React.Component {
 
     handleSubmit= (e) => {
         e.preventDefault()
-        this.props.addTransaction(this.state)
+        this.props.addTransaction(this.state, this.props.account.id)
         this.setState({
             t_name: '',
             t_type: '',
@@ -31,11 +31,12 @@ class TransactionInput extends React.Component {
     render(){
         return(
             <form onSubmit={this.handleSubmit}>
-                <input type='text' name='t_name' value={this.state.t_name} onChange={this.handleChange}/>
-                <input type='text' name='t_type' value={this.state.t_type} onChange={this.handleChange}/>
-                <input type='text' name='t_amount' value={this.state.t_amount} onChange={this.handleChange}/>
-                <input type='text' name ='description' value={this.state.description} onChange={this.handleChange}/>
+                <input type='text' name='t_name' placeholder='Name' value={this.state.t_name} onChange={this.handleChange}/>
+                <input type='text' name='t_type' placeholder='Credit/Debit/Wtihdrawal/Deposit' value={this.state.t_type} onChange={this.handleChange}/>
+                <input type='text' name='t_amount' placeholder='$ Amount' value={this.state.t_amount} onChange={this.handleChange}/>
+                <input type='text' name ='description' placeholder='Description' value={this.state.description} onChange={this.handleChange}/>
                 <input type='submit'/>
+                <br></br>
             </form>
         )
     }
