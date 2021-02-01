@@ -5,7 +5,8 @@ const Navigation = (props) => {
 
     return (
         <div>
-            <Link to='/accounts'>Reactive Accounts</Link>
+            <Link to='/accounts' style={{paddingRight: '20px'}}>Reactive Accounts</Link>
+            <Link to='/accounts/new'>Add New Account</Link>
         </div>
     )
 }

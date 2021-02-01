@@ -23,8 +23,26 @@ export default function accountReducer(state = {accounts: []}, action) {
                     return account
                 }
             })}
-        case "DELETE_ACCOUNT":
-            return {}
+        // case "DELETE_ACCOUNT":
+        //     let accountsTwo = state.accounts.filter(account => {
+        //         if (account.id !== action.payload.id) {
+        //           return account
+        //         } else {
+        //           return action.payload
+        //         }
+        //       })
+        //       return {...state, accounts: accountsTwo}
+            // return {...state, accounts: state.accounts.filter(account => {
+            //     if (account.id !== action.payload) {
+            //         return account
+            //     }})}
+            // return {...state, accounts: state.accounts.filter(account => {
+            //     if (account.id !== action.payload.id) {
+            //         return {accounts: [state.accounts]}
+            //     }
+            //     else {
+            //         return account
+            //     }})}
         default:
             return state
     }

@@ -20,8 +20,6 @@ class TransactionsContainer extends React.Component {
         return(
             <div>
                 <h1>Transactions:</h1>
-
-                {/* the following is undefined.. */}
                 <Transactions transactions={this.props.account && this.props.account.transactions}/>
                 <br></br>
                 <p>
