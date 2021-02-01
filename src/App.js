@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import Navigation from './components/Navigation'
 // import {connect} from 'react-redux'
 // Connect automatically dispatches, thunk allows us to call dispatch async from our fetch actions
 // import {fetchAccounts} from './actions/fetchAccounts'
@@ -23,12 +24,14 @@ class App extends React.Component{
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            You got this!
-          </p><br></br>
-          <h1>Reactive Accounts:</h1>
+
+
           <div>
             <Router>
+            <div>
+              <h1>Reactive Accounts:</h1><br></br>
+              <Navigation/>
+            </div><br></br>
               <AccountsContainer/>
             </Router>
           </div><br></br>
