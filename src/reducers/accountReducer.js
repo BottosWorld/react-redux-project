@@ -13,7 +13,18 @@ export default function accountReducer(state = {accounts: []}, action) {
                 else {
                     return account
                 }
-            })} 
+            })}
+        case "DELETE_TRANSACTION":
+            return {...state, accounts: state.accounts.map(account => {
+                if (account.id === action.payload.id) {
+                    return action.payload
+                }
+                else {
+                    return account
+                }
+            })}
+        case "DELETE_ACCOUNT":
+            return {}
         default:
             return state
     }
