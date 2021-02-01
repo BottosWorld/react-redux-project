@@ -20,6 +20,8 @@ const mapStateToProps = state => {
     }
 }
 
+// const componentDidUpdate may help rendering an updated state upon account deletion/addition
+
 class AccountsContainer extends React.Component {
 
     componentDidMount(){
@@ -30,6 +32,7 @@ class AccountsContainer extends React.Component {
         return(
             <div>
                 <Switch>
+                    {/* <Route exact path='/accounts' render={(routerProps) => <Accounts {...routerProps} accounts={this.props.accounts}/>}/> */}
                     <Route path='/accounts/new' component={AccountInput}/>
                     <Route path='/accounts/:id' render={(routerProps) => <Account {...routerProps} accounts={this.props.accounts}/>}/>
                     <Route path='/accounts' render={(routerProps) => <Accounts {...routerProps} accounts={this.props.accounts}/>}/>

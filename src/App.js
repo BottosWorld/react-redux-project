@@ -1,12 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
 import React from 'react'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router} from 'react-router-dom'
 import Navigation from './components/Navigation'
 // import {connect} from 'react-redux'
 // Connect automatically dispatches, thunk allows us to call dispatch async from our fetch actions
 // import {fetchAccounts} from './actions/fetchAccounts'
-import AccountsContainer from "./containers/AccountsContainer";
+import AccountsContainer from "./containers/AccountsContainer"
+import RenderCanvas from './components/RenderCanvas'
 
 class App extends React.Component{
 
@@ -22,7 +23,9 @@ class App extends React.Component{
   render(){
     return (
       <div className="App">
+
         <header className="App-header">
+        <RenderCanvas/>
           <img src={logo} className="App-logo" alt="logo" />
 
 
@@ -35,7 +38,7 @@ class App extends React.Component{
               <AccountsContainer/>
             </Router>
           </div><br></br>
-          <p>Don't forget to tell your wifey you love her!</p>
+          {/* <p>Don't forget to tell your wifey you love her!</p> */}
           <p>
             <a
               className="App-link"

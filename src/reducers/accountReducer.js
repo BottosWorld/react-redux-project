@@ -23,7 +23,9 @@ export default function accountReducer(state = {accounts: []}, action) {
                     return account
                 }
             })}
-        // case "DELETE_ACCOUNT":
+        case "DELETE_ACCOUNT":
+            const newAccountArray = {...state.accounts.filter(account => account.id === action.id)}
+            // return {...state, accounts: newAccountArray}
         //     let accountsTwo = state.accounts.filter(account => {
         //         if (account.id !== action.payload.id) {
         //           return account
@@ -36,13 +38,17 @@ export default function accountReducer(state = {accounts: []}, action) {
             //     if (account.id !== action.payload) {
             //         return account
             //     }})}
-            // return {...state, accounts: state.accounts.filter(account => {
-            //     if (account.id !== action.payload.id) {
-            //         return {accounts: [state.accounts]}
-            //     }
-            //     else {
-            //         return account
-            //     }})}
+            return {...state, accounts: state.accounts.filter(account => {
+                if (account.id !== action.payload.id) {
+                    console.log('you are in newaccount array')
+                    return {accounts: newAccountArray}
+                }
+                return {accounts: newAccountArray}
+                // else {
+                //     console.log('you are in previous state')
+                //     return account
+                // }
+            })}
         default:
             return state
     }

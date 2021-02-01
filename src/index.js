@@ -10,6 +10,7 @@ import thunk from 'redux-thunk';
 // import reducer from './reducers/index'
 import accountReducer from './reducers/accountReducer'
 
+
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
 let store = createStore(accountReducer, composeEnhancers(applyMiddleware(thunk)))
