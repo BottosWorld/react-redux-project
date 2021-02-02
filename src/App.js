@@ -7,7 +7,8 @@ import Navigation from './components/Navigation'
 // Connect automatically dispatches, thunk allows us to call dispatch async from our fetch actions
 // import {fetchAccounts} from './actions/fetchAccounts'
 import AccountsContainer from "./containers/AccountsContainer"
-import RenderCanvas from './components/RenderCanvas'
+// import RenderCanvas from './components/RenderCanvas'
+import ClickMe from './components/ClickMe'
 
 class App extends React.Component{
 
@@ -25,13 +26,14 @@ class App extends React.Component{
       <div className="App">
 
         <header className="App-header">
-        <RenderCanvas/>
+        {/* <RenderCanvas/> */}
           <img src={logo} className="App-logo" alt="logo" />
 
 
           <div>
             <Router>
             <div>
+              <ClickMe/>
               <h1>Reactive Accounts:</h1><br></br>
               <Navigation/>
             </div><br></br>

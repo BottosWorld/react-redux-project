@@ -1,3 +1,7 @@
+# Rails API Backend:
+Here is the link to view the rails API backend for this app-
+https://github.com/botto54/react-redux-project-api
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
