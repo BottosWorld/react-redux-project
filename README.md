@@ -1,6 +1,6 @@
 # Rails API Backend:
 Here is the link to view the rails API backend for this app-
-https://github.com/botto54/react-redux-project-api
+https://github.com/bottosworld/react-redux-project-api
 
 # Getting Started with Create React App
 
